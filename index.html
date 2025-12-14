@@ -9,47 +9,33 @@
 </head>
 <body>
 
-  <!-- Top Navigation -->
+  <!-- Fixed Top Bar -->
   <header class="top-bar">
     <h1>Your Name</h1>
     <button id="openSidebar">Contact</button>
   </header>
 
-  <!-- Main Content -->
-  <main class="content">
+  <!-- Scroll Container -->
+  <main class="scroll-container">
 
-    <section class="slideshow">
-      <h2>Featured Work</h2>
+    <!-- Work 1 -->
+    <section class="work-slide slide-one">
+      <h2>Work One</h2>
+      <img src="./assets/images/placeholder1.jpg" alt="Work 1">
+    </section>
 
-      <div class="slides-container">
+    <!-- Work 2 -->
+    <section class="work-slide slide-two">
+      <h2>Work Two</h2>
+      <video controls>
+        <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+      </video>
+    </section>
 
-        <!-- Slide 1 (Image) -->
-        <div class="slide active">
-          <img src="./assets/images/placeholder1.jpg" alt="Work 1">
-          <p class="caption">Work Title 1</p>
-        </div>
-
-        <!-- Slide 2 (Video) -->
-        <div class="slide">
-          <video controls>
-            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
-          </video>
-          <p class="caption">Work Title 2</p>
-        </div>
-
-        <!-- Slide 3 (Image) -->
-        <div class="slide">
-          <img src="./assets/images/placeholder2.jpg" alt="Work 3">
-          <p class="caption">Work Title 3</p>
-        </div>
-
-      </div>
-
-      <!-- Controls -->
-      <div class="slideshow-controls">
-        <button id="prevSlide">‹</button>
-        <button id="nextSlide">›</button>
-      </div>
+    <!-- Work 3 -->
+    <section class="work-slide slide-three">
+      <h2>Work Three</h2>
+      <img src="./assets/images/placeholder2.jpg" alt="Work 3">
     </section>
 
   </main>
