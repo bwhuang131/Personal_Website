@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function openSidebar() {
     document.body.classList.add("sidebar-open");
 
-    // Load contact page into sidebar
     fetch("./pages/contact.html")
-      .then(res => res.text())
+      .then(response => response.text())
       .then(html => {
         sidebarContent.innerHTML = html;
       });
@@ -20,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   openBtn.addEventListener("click", openSidebar);
-  closeBtn.addEventListener("click", closeSidebar);
   overlay.addEventListener("click", closeSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
 });
