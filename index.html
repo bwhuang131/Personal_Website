@@ -3,28 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Home</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
 
-  <header>
-    <h1>My Static Website</h1>
-    <nav>
-      <a href="./index.html">Home</a>
-      <a href="./pages/about.html">About</a>
-      <a href="./pages/contact.html">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="top-bar">
+    <h1>My Website</h1>
+    <button id="openSidebar">Contacts</button>
   </header>
 
-  <main>
-    <p>This is a fully working static website.</p>
-    <button id="btn">Click Me</button>
+  <!-- Main Content -->
+  <main class="content">
+
+    <section class="media-section">
+      <h2>Gallery</h2>
+
+      <!-- Image Placeholder -->
+      <img
+        src="./assets/images/placeholder.jpg"
+        alt="Image placeholder"
+        class="media-img"
+      />
+
+      <!-- Video Placeholder -->
+      <video class="media-video" controls>
+        <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+
+    </section>
+
   </main>
 
-  <!-- JavaScript -->
+  <!-- Sidebar Overlay -->
+  <div id="overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <button id="closeSidebar">✕</button>
+    <div id="sidebarContent"></div>
+  </aside>
+
   <script src="./js/main.js"></script>
 </body>
 </html>

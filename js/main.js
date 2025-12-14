@@ -1,11 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("JavaScript loaded");
+  const openBtn = document.getElementById("openSidebar");
+  const closeBtn = document.getElementById("closeSidebar");
+  const overlay = document.getElementById("overlay");
+  const sidebarContent = document.getElementById("sidebarContent");
 
-  const button = document.getElementById("btn");
+  function openSidebar() {
+    document.body.classList.add("sidebar-open");
 
-  if (button) {
-    button.addEventListener("click", () => {
-      alert("Button clicked!");
-    });
+    // Load contacts page into sidebar
+    fetch("./pages/contacts.html")
+      .then(res => res.text())
+      .then(html => {
+        sidebarContent.innerHTML = html;
+      });
   }
+
+  function closeSidebar() {
+    document.body.classList.remove("sidebar-open");
+  }
+
+  openBtn.addEventListener("click", openSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
 });
