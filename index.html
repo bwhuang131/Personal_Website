@@ -18,22 +18,38 @@
   <!-- Main Content -->
   <main class="content">
 
-    <section class="media-section">
+    <section class="slideshow">
       <h2>Featured Work</h2>
 
-      <!-- Image Placeholder -->
-      <img
-        src="./assets/images/placeholder.jpg"
-        alt="Image placeholder"
-        class="media-img"
-      />
+      <div class="slides-container">
 
-      <!-- Video Placeholder -->
-      <video class="media-video" controls>
-        <source src="./assets/videos/placeholder.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+        <!-- Slide 1 (Image) -->
+        <div class="slide active">
+          <img src="./assets/images/placeholder1.jpg" alt="Work 1">
+          <p class="caption">Work Title 1</p>
+        </div>
 
+        <!-- Slide 2 (Video) -->
+        <div class="slide">
+          <video controls>
+            <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Work Title 2</p>
+        </div>
+
+        <!-- Slide 3 (Image) -->
+        <div class="slide">
+          <img src="./assets/images/placeholder2.jpg" alt="Work 3">
+          <p class="caption">Work Title 3</p>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <div class="slideshow-controls">
+        <button id="prevSlide">‹</button>
+        <button id="nextSlide">›</button>
+      </div>
     </section>
 
   </main>
