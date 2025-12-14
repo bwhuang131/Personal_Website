@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function openSidebar() {
     document.body.classList.add("sidebar-open");
 
-    // Load contacts page into sidebar
-    fetch("./pages/contacts.html")
+    // Load contact page into sidebar
+    fetch("./pages/contact.html")
       .then(res => res.text())
       .then(html => {
         sidebarContent.innerHTML = html;
