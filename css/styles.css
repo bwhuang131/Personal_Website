@@ -130,7 +130,7 @@ html, body {
   right: -320px;
   width: 320px;
   height: 100%;
-  background: #ffffff96;
+  background: #ffffff;
   padding: 24px;
   transition: right 0.3s;
   z-index: 1000;
@@ -141,6 +141,43 @@ body.sidebar-open #sidebar {
 }
 
 body.sidebar-open #overlay {
-  opacity: 0.75;
+  opacity: 1;
   pointer-events: auto;
+}
+
+.contact-profile {
+  margin-top: 40px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.profile-info p {
+  margin: 8px 0;
+}
+
+.profile-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-links a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.profile-links a:hover {
+  text-decoration: underline;
 }
