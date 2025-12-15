@@ -9,46 +9,101 @@
 </head>
 <body>
 
-  <!-- Fixed Top Bar -->
-  <header class="top-bar">
-    <h1>Your Name</h1>
-    <button id="openSidebar">Contact</button>
-  </header>
+<header class="top-bar">
+  <h1>Your Name</h1>
+  <button id="openSidebar">Contact</button>
+</header>
 
-  <!-- Scroll Container -->
-  <main class="scroll-container">
+<main class="scroll-container">
 
-    <!-- Work 1 -->
-    <section class="work-slide slide-one">
-      <h2>Work One</h2>
-      <img src="./assets/images/placeholder1.jpg" alt="Work 1">
-    </section>
+  <!-- TITLE SLIDE -->
+  <section class="work-slide title-slide" id="home">
+    <h2>Selected Works</h2>
 
-    <!-- Work 2 -->
-    <section class="work-slide slide-two">
-      <h2>Work Two</h2>
-      <video controls>
-        <source src="./assets/videos/placeholder.mp4" type="video/mp4">
-      </video>
-    </section>
+    <nav class="work-links">
+      <a href="#work1">Work One</a>
+      <a href="#work2">Work Two</a>
+      <a href="#work3">Work Three</a>
+    </nav>
+  </section>
 
-    <!-- Work 3 -->
-    <section class="work-slide slide-three">
-      <h2>Work Three</h2>
-      <img src="./assets/images/placeholder2.jpg" alt="Work 3">
-    </section>
+  <!-- WORK 1 -->
+  <section class="work-slide slide-one" id="work1">
+    <div class="work-content">
+      <div class="media">
+        <img src="./assets/images/placeholder1.jpg" alt="Work One">
+      </div>
 
-  </main>
+      <div class="summary">
+        <h2>Work One</h2>
+        <p>
+          Short description of this project. Explain the idea,
+          tools used, or concept explored.
+        </p>
+        <ul>
+          <li>JavaScript</li>
+          <li>Design</li>
+          <li>Research</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <!-- Overlay -->
-  <div id="overlay"></div>
+  <!-- WORK 2 -->
+  <section class="work-slide slide-two" id="work2">
+    <div class="work-content">
+      <div class="media">
+        <video controls>
+          <source src="./assets/videos/placeholder.mp4" type="video/mp4">
+        </video>
+      </div>
 
-  <!-- Sidebar -->
-  <aside id="sidebar">
-    <button id="closeSidebar">✕</button>
-    <div id="sidebarContent"></div>
-  </aside>
+      <div class="summary">
+        <h2>Work Two</h2>
+        <p>
+          Summary text for the second work.
+          Replace with your actual description.
+        </p>
+        <ul>
+          <li>Robotics</li>
+          <li>Simulation</li>
+          <li>CAD</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <script src="./js/main.js"></script>
+  <!-- WORK 3 -->
+  <section class="work-slide slide-three" id="work3">
+    <div class="work-content">
+      <div class="media">
+        <img src="./assets/images/placeholder2.jpg" alt="Work Three">
+      </div>
+
+      <div class="summary">
+        <h2>Work Three</h2>
+        <p>
+          Brief explanation of the project goals
+          and what makes it interesting.
+        </p>
+        <ul>
+          <li>Engineering</li>
+          <li>Prototyping</li>
+          <li>Analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="overlay"></div>
+
+<aside id="sidebar">
+  <button id="closeSidebar">✕</button>
+  <div id="sidebarContent"></div>
+</aside>
+
+<script src="./js/main.js"></script>
 </body>
 </html>
