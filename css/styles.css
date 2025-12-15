@@ -130,7 +130,7 @@ html, body {
   right: -320px;
   width: 320px;
   height: 100%;
-  background: #fff;
+  background: #ffffff96;
   padding: 24px;
   transition: right 0.3s;
   z-index: 1000;
@@ -141,6 +141,6 @@ body.sidebar-open #sidebar {
 }
 
 body.sidebar-open #overlay {
-  opacity: 1;
+  opacity: 0.75;
   pointer-events: auto;
 }
