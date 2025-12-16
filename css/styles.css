@@ -29,8 +29,8 @@ html, body {
     rgba(0, 0, 0, 0.0) 100px
   );
 
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 
   color: white;
   padding: 0 32px;
