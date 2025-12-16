@@ -19,7 +19,6 @@ html, body {
 .top-bar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100px;
 
@@ -30,28 +29,33 @@ html, body {
     rgba(0, 0, 0, 0.0) 100px
   );
 
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-
-  display: flex;
-  align-items: flex-start;      /* align from top */
-  justify-content: space-between;
-
-  padding: 40px 32px 0 32px;    /* ⬅️ THIS sets the 30px vertical position */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 
   color: white;
+  padding: 0 32px;
   z-index: 100;
 }
 
-/* Title */
-.top-bar h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  white-space: nowrap;
+/* Position header text at 30px */
+.top-bar h1,
+.top-bar button {
+  position: absolute;
+  top: 30px;
+  transform: translateY(-50%);
 }
 
-/* Contact Button */
+/* Left title */
+.top-bar h1 {
+  left: 32px;
+  margin: 0;
+}
+
+/* Right contact button */
 .top-bar button {
+  right: 32px;
+  left: auto;
+
   background: none;
   border: none;
   color: white;
@@ -63,7 +67,7 @@ html, body {
   letter-spacing: 0.04em;
 
   padding: 0;
-  position: relative;
+  position: absolute;
 }
 
 /* Underline hover effect (Contact) */
@@ -84,4 +88,216 @@ html, body {
 .top-bar button:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* =========================
+   Scroll Container
+   ========================= */
+.scroll-container {
+  position: fixed;
+  inset: 0;
+
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+/* =========================
+   Custom Scrollbar
+   ========================= */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================
+   Slides
+   ========================= */
+.work-slide {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding-top: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   Title Slide
+   ========================= */
+.title-slide {
+  background: #0f172a;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+}
+
+.work-links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Work link base */
+.work-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 1.2rem;
+
+  position: relative;
+  display: inline-block;
+}
+
+/* Work link underline hover */
+.work-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.work-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* =========================
+   Work Content
+   ========================= */
+.work-content {
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Media */
+.media img,
+.media video {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  background: black;
+}
+
+/* Summary */
+.summary {
+  color: white;
+}
+
+.summary h2 {
+  margin-top: 0;
+}
+
+.summary ul {
+  padding-left: 20px;
+}
+
+/* =========================
+   Slide Backgrounds
+   ========================= */
+.slide-one { background: #1e3a8a; }
+.slide-two { background: #065f46; }
+.slide-three { background: #7c2d12; }
+
+/* =========================
+   Overlay + Sidebar
+   ========================= */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100%;
+  background: #ffffff;
+  padding: 24px;
+  transition: right 0.3s;
+  z-index: 1000;
+
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+body.sidebar-open #sidebar {
+  right: 0;
+}
+
+body.sidebar-open #overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================
+   Contact Profile
+   ========================= */
+.contact-profile {
+  margin-top: 40px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.profile-info p {
+  margin: 8px 0;
+}
+
+.profile-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-links a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.profile-links a:hover {
+  text-decoration: underline;
 }
