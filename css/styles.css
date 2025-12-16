@@ -5,16 +5,11 @@
   box-sizing: border-box;
 }
 
-/* Base page */
 html, body {
   margin: 0;
   height: 100%;
   font-family: Garamond, sans-serif;
-
-  /* Allow scrolling inside scroll-container only */
   overflow: hidden;
-
-  /* Dark base so transparency never reveals white */
   background: #000;
 }
 
@@ -27,7 +22,6 @@ html, body {
   width: 100%;
   height: 100px;
 
-  /* Black → transparent fade starting at 60px */
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.95) 0px,
@@ -39,12 +33,32 @@ html, body {
   -webkit-backdrop-filter: blur(6px);
 
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 32px;
-
   z-index: 100;
+}
+
+/* Position header text at visual center (60px) */
+.top-bar h1,
+.top-bar button {
+  position: absolute;
+  top: 60px;
+  transform: translateY(-50%);
+}
+
+/* Left title */
+.top-bar h1 {
+  left: 32px;
+  margin: 0;
+}
+
+/* Right contact button */
+.top-bar button {
+  right: 32px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* =========================
@@ -57,16 +71,23 @@ html, body {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+
+  /* Hide scrollbar (Firefox) */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* =========================
-   Slides (Snap Targets)
+   Slides
    ========================= */
 .work-slide {
   height: 100vh;
   scroll-snap-align: start;
 
-  /* Space so content isn't hidden under header */
   padding-top: 100px;
 
   display: flex;
@@ -102,21 +123,18 @@ html, body {
 }
 
 /* =========================
-   Work Content Layout
+   Work Content
    ========================= */
 .work-content {
   width: 90%;
   max-width: 1200px;
-
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
   align-items: center;
 }
 
-/* =========================
-   Media
-   ========================= */
+/* Media */
 .media img,
 .media video {
   width: 100%;
@@ -125,9 +143,7 @@ html, body {
   background: black;
 }
 
-/* =========================
-   Summary
-   ========================= */
+/* Summary */
 .summary {
   color: white;
 }
@@ -141,7 +157,7 @@ html, body {
 }
 
 /* =========================
-   Background Colors (Test)
+   Slide Backgrounds (Test)
    ========================= */
 .slide-one {
   background: #1e3a8a;
@@ -189,7 +205,7 @@ body.sidebar-open #overlay {
 }
 
 /* =========================
-   Contact Page
+   Contact Profile
    ========================= */
 .contact-profile {
   margin-top: 40px;
