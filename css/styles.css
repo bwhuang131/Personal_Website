@@ -145,6 +145,7 @@ html, body {
    Title Slide
    ========================= */
 .title-slide {
+  font-family: trebuchet, sans-serif;
   background: #0f172a;
   color: white;
   flex-direction: column;
@@ -162,6 +163,7 @@ html, body {
 .work-links a {
   color: white;
   text-decoration: none;
+  font-family: trebuchet, sans-serif;
   font-size: 1.2rem;
 
   position: relative;
