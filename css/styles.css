@@ -37,7 +37,7 @@ html, body {
   align-items: flex-start;      /* align from top */
   justify-content: space-between;
 
-  padding: 40px 20px 0 32px;    /* ⬅️ THIS sets the 30px vertical position */
+  padding: 40px 32px 0 32px;    /* ⬅️ THIS sets the 30px vertical position */
 
   color: white;
   z-index: 100;
