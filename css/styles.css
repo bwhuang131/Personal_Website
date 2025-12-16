@@ -164,27 +164,26 @@ html, body {
   font-size: 1.2rem;
 
   position: relative;
-  display: inline-block;
+  display: inline-block; /* ensures ::after aligns to text width */
 }
 
-/* Work link underline hover */
+/* Underline hover exactly under text */
 .work-links a::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 100%;
+  width: 100%;           /* matches the width of the text */
   height: 1px;
   background: currentColor;
 
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: left; /* start animation from left */
   transition: transform 0.25s ease;
 }
 
 .work-links a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  transform: scaleX(1);  /* underline expands exactly to text width */
 }
 
 /* =========================
