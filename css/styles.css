@@ -8,7 +8,7 @@
 html, body {
   margin: 0;
   height: 100%;
-  font-family: open, sans-serif;
+  font-family: trebuchet, sans-serif;
   font-weight: bold;
   overflow: hidden;
   background: #000;
@@ -48,6 +48,7 @@ html, body {
 
 /* Left title */
 .top-bar h1 {
+  font-family: open, sans-serif;
   left: 32px;
   margin: 0;
 }
@@ -250,7 +251,7 @@ html, body {
   transition: right 0.3s;
   z-index: 1000;
 
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: 'garamond', sans-serif;
 }
 
 body.sidebar-open #sidebar {
