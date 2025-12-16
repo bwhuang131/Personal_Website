@@ -30,8 +30,8 @@ html, body {
     rgba(0, 0, 0, 0.0) 100px
   );
 
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 
   display: flex;
   align-items: flex-start;      /* align from top */
