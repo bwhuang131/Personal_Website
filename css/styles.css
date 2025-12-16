@@ -8,7 +8,7 @@
 html, body {
   margin: 0;
   height: 100%;
-  font-family: proxima-nova, sans-serif;
+  font-family: 'Trebuchet MS', serif;
   overflow: hidden;
   background: #000;
 }
@@ -208,7 +208,6 @@ html, body {
 }
 
 #sidebar {
-  font-family: 'Garamond', sans-serif;
   position: fixed;
   top: 0;
   right: -320px;
