@@ -8,7 +8,7 @@
 html, body {
   margin: 0;
   height: 100%;
-  font-family: trebuchet, sans-serif; /* default font for all other text */
+  font-family: trebuchet, sans-serif;
   font-weight: bold;
   overflow: hidden;
   background: #000;
@@ -48,14 +48,13 @@ html, body {
 
 /* Left title */
 .top-bar h1 {
-  font-family: open, sans-serif; /* left title font */
+  font-family: open, sans-serif;
   left: 32px;
   margin: 0;
 }
 
 /* Right contact button */
 .top-bar button {
-  font-family: georgia, serif; /* contact button font */
   right: 32px;
   left: auto;
 
@@ -64,11 +63,13 @@ html, body {
   color: white;
   cursor: pointer;
 
+  font-family: 'Georgia', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 
   padding: 0;
+  position: absolute;
 }
 
 /* Underline hover effect (Contact) */
@@ -141,10 +142,10 @@ html, body {
 }
 
 /* =========================
-   Title Slide / Featured Work
+   Title Slide
    ========================= */
 .title-slide {
-  font-family: open, sans-serif; /* featured work font */
+  font-family: trebuchet, sans-serif;
   background: #0f172a;
   color: white;
   flex-direction: column;
@@ -154,17 +155,19 @@ html, body {
 .work-links {
   margin-top: 30px;
   display: flex;
+  flex-direction: column;
   gap: 16px;
-  justify-content: center; /* horizontal centered */
 }
 
+/* Work link base */
 .work-links a {
   color: white;
   text-decoration: none;
-  font-family: open, sans-serif; /* featured work links font */
+  font-family: trebuchet, sans-serif;
   font-size: 1.2rem;
+
   position: relative;
-  display: inline-block;
+  display: inline-block; /* ensures ::after aligns to text width */
 }
 
 /* Underline hover exactly under text */
@@ -173,23 +176,17 @@ html, body {
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 100%;
+  width: 100%;           /* matches the width of the text */
   height: 1px;
   background: currentColor;
+
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: left; /* start animation from left */
   transition: transform 0.25s ease;
 }
 
 .work-links a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Optional: add | separator between links except the last one */
-.work-links a:not(:last-child)::after {
-  content: '|';
-  margin-left: 8px;
-  color: white;
+  transform: scaleX(1);  /* underline expands exactly to text width */
 }
 
 /* =========================
@@ -202,7 +199,6 @@ html, body {
   grid-template-columns: 2fr 1fr;
   gap: 40px;
   align-items: center;
-  font-family: trebuchet, sans-serif; /* default content font */
 }
 
 /* Media */
@@ -257,7 +253,7 @@ html, body {
   transition: right 0.3s;
   z-index: 1000;
 
-  font-family: garamond, serif; /* sidebar font */
+  font-family: 'garamond', sans-serif;
 }
 
 body.sidebar-open #sidebar {
@@ -298,7 +294,6 @@ body.sidebar-open #overlay {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-family: trebuchet, sans-serif; /* default content font */
 }
 
 .profile-links a {
