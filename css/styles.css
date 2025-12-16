@@ -55,7 +55,7 @@ html, body {
 /* Right contact button */
 .top-bar button {
   right: 32px;
-  left: auto;
+  left: 300px;
 
   background: none;
   border: none;
