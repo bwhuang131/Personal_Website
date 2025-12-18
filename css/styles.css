@@ -37,7 +37,7 @@ html, body {
   z-index: 100;
 }
 
-/* Position header text at 30px */
+/* Position header text */
 .top-bar h1,
 .top-bar button {
   position: absolute;
@@ -56,23 +56,18 @@ html, body {
 /* Right contact button */
 .top-bar button {
   right: 32px;
-  left: auto;
-
   background: none;
   border: none;
   color: white;
   cursor: pointer;
 
-  font-family: 'trebuchet MS', sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 1rem;
-  font-weight: 500;
   letter-spacing: 0.04em;
-
   padding: 0;
-  position: absolute;
 }
 
-/* Underline hover effect (Contact) */
+/* Contact underline */
 .top-bar button::after {
   content: '';
   position: absolute;
@@ -98,38 +93,13 @@ html, body {
 .scroll-container {
   position: fixed;
   inset: 0;
-
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 /* =========================
-   Custom Scrollbar
-   ========================= */
-.scroll-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.45);
-}
-
-/* =========================
-   Slides
+   Slides (Base)
    ========================= */
 .work-slide {
   height: 100vh;
@@ -139,38 +109,56 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+.work-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Ensure content is above overlay */
+.work-slide > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
-   Title Slide
+   Title Slide (Main Page)
    ========================= */
 .title-slide {
-  background: #0f172a;
+  background-image: url("images/home-bg.jpg");
   color: white;
   flex-direction: column;
   text-align: center;
 }
 
+/* Work links */
 .work-links {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* center text but don't stretch links */
+  align-items: center;
   gap: 14px;
 }
 
-/* Project links */
 .work-links a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-
   position: relative;
-  display: inline-block; /* CRITICAL: prevents full-width underline */
-  width: fit-content;    /* shrink to text width */
+  display: inline-block;
+  width: fit-content;
 }
 
-/* Hover underline (text width only) */
 .work-links a::after {
   content: '';
   position: absolute;
@@ -179,7 +167,6 @@ html, body {
   width: 100%;
   height: 1px;
   background: currentColor;
-
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
@@ -224,11 +211,19 @@ html, body {
 }
 
 /* =========================
-   Slide Backgrounds
+   Project Background Images
    ========================= */
-.slide-one { background: #1e3a8a; }
-.slide-two { background: #065f46; }
-.slide-three { background: #7c2d12; }
+.slide-one {
+  background-image: url("images/project-one-bg.jpg");
+}
+
+.slide-two {
+  background-image: url("images/project-two-bg.jpg");
+}
+
+.slide-three {
+  background-image: url("images/project-three-bg.jpg");
+}
 
 /* =========================
    Overlay + Sidebar
@@ -252,8 +247,7 @@ html, body {
   padding: 24px;
   transition: right 0.3s;
   z-index: 1000;
-
-  font-family: 'georgia', sans-serif;
+  font-family: 'Georgia', sans-serif;
 }
 
 body.sidebar-open #sidebar {
@@ -277,11 +271,6 @@ body.sidebar-open #overlay {
   height: 120px;
   margin: 20px auto;
   background: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-size: 14px;
   border-radius: 50%;
 }
 
