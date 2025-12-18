@@ -264,6 +264,11 @@ body.sidebar-open #overlay {
    ========================= */
 .contact-profile {
   margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ⬅️ centers EVERYTHING horizontally */
+  text-align: center;    /* ⬅️ centers all text by default */
 }
 
 .profile-image {
@@ -281,15 +286,10 @@ body.sidebar-open #overlay {
 
 .profile-info p {
   margin: 8px 0;
-  text-align: center;
 }
 
 .profile-about {
   margin: 16px 0 24px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #374151; /* soft dark gray */
-  text-align: center;
 }
 
 .profile-links {
@@ -297,7 +297,6 @@ body.sidebar-open #overlay {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: center;
 }
 
 .profile-links a {
