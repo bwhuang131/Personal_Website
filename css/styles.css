@@ -281,6 +281,7 @@ body.sidebar-open #overlay {
 
 .profile-info p {
   margin: 8px 0;
+  text-align: center;
 }
 
 .profile-about {
@@ -296,6 +297,7 @@ body.sidebar-open #overlay {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: center;
 }
 
 .profile-links a {
