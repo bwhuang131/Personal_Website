@@ -270,8 +270,13 @@ body.sidebar-open #overlay {
   width: 120px;
   height: 120px;
   margin: 20px auto;
-  background: #ddd;
+  display: block;
+
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+
+  border: 2px solid #e5e7eb; /* optional */
 }
 
 .profile-info p {
