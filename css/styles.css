@@ -283,6 +283,14 @@ body.sidebar-open #overlay {
   margin: 8px 0;
 }
 
+.profile-about {
+  margin: 16px 0 24px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #374151; /* soft dark gray */
+  text-align: center;
+}
+
 .profile-links {
   margin-top: 20px;
   display: flex;
