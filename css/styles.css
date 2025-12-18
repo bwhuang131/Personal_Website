@@ -63,7 +63,7 @@ html, body {
   color: white;
   cursor: pointer;
 
-  font-family: 'Georgia', sans-serif;
+  font-family: 'trebuchet MS', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -155,36 +155,38 @@ html, body {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center; /* center text but don't stretch links */
+  gap: 14px;
 }
 
-/* Work link base */
+/* Project links */
 .work-links a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
 
   position: relative;
-  display: inline-block; /* ensures ::after aligns to text width */
+  display: inline-block; /* CRITICAL: prevents full-width underline */
+  width: fit-content;    /* shrink to text width */
 }
 
-/* Underline hover exactly under text */
+/* Hover underline (text width only) */
 .work-links a::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 100%;           /* matches the width of the text */
+  width: 100%;
   height: 1px;
   background: currentColor;
 
   transform: scaleX(0);
-  transform-origin: left; /* start animation from left */
+  transform-origin: left;
   transition: transform 0.25s ease;
 }
 
 .work-links a:hover::after {
-  transform: scaleX(1);  /* underline expands exactly to text width */
+  transform: scaleX(1);
 }
 
 /* =========================
@@ -251,7 +253,7 @@ html, body {
   transition: right 0.3s;
   z-index: 1000;
 
-  font-family: 'garamond', sans-serif;
+  font-family: 'georgia', sans-serif;
 }
 
 body.sidebar-open #sidebar {
